@@ -1,0 +1,210 @@
+---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 2/19/20 8:04 PM
+Description: Exception initializing level
+
+org.spongepowered.asm.mixin.transformer.throwables.MixinTransformerError: An unexpected critical error was encountered
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:364)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:191)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:178)
+	at org.spongepowered.asm.mixin.transformer.FabricMixinTransformerProxy.transformClassBytes(FabricMixinTransformerProxy.java:23)
+	at net.fabricmc.loader.launch.knot.KnotClassDelegate.loadClassData(KnotClassDelegate.java:174)
+	at net.fabricmc.loader.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:143)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at supercoder79.simplexterrain.world.gen.SimplexChunkGenerator.method_12107(SimplexChunkGenerator.java:116)
+	at net.minecraft.class_2806.method_16566(class_2806.java:102)
+	at net.minecraft.class_2806$$Lambda$1344/1680079783.doWork(Unknown Source)
+	at net.minecraft.class_2806$class_3768.doWork(class_2806.java:258)
+	at net.minecraft.class_2806.method_12154(class_2806.java:214)
+	at net.minecraft.class_3898.method_17225(class_3898.java:549)
+	at net.minecraft.class_3898$$Lambda$3833/140503747.apply(Unknown Source)
+	at com.mojang.datafixers.util.Either$Left.map(Either.java:38)
+	at net.minecraft.class_3898.method_17224(class_3898.java:543)
+	at net.minecraft.class_3898$$Lambda$3818/728303428.apply(Unknown Source)
+	at java.util.concurrent.CompletableFuture.uniCompose(CompletableFuture.java:952)
+	at java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:926)
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:442)
+	at net.minecraft.class_3900.method_17634(class_3900.java:58)
+	at net.minecraft.class_3900$$Lambda$3831/1837247072.run(Unknown Source)
+	at net.minecraft.class_3846.method_16907(class_3846.java:83)
+	at net.minecraft.class_3846.method_16900(class_3846.java:123)
+	at net.minecraft.class_3846.run(class_3846.java:91)
+	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1689)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+Caused by: org.spongepowered.asm.mixin.injection.throwables.InjectionError: Critical injection failure: Redirector getSqDistanceTo(Lnet/minecraft/class_1657;DDDLnet/minecraft/class_1311;Lnet/minecraft/class_3218;Lnet/minecraft/class_2818;Lnet/minecraft/class_2338;)D in carpet.mixins.json:SpawnHelperMixin failed injection check, (0/1) succeeded. Scanned 1 target(s). Using refmap fabric-carpet-refmap.json
+	at org.spongepowered.asm.mixin.injection.struct.InjectionInfo.postInject(InjectionInfo.java:400)
+	at org.spongepowered.asm.mixin.transformer.MixinTargetContext.applyInjections(MixinTargetContext.java:1280)
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyInjections(MixinApplicatorStandard.java:1042)
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMixin(MixinApplicatorStandard.java:395)
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:320)
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:345)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:570)
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:351)
+	... 29 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:364)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:191)
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:178)
+	at org.spongepowered.asm.mixin.transformer.FabricMixinTransformerProxy.transformClassBytes(FabricMixinTransformerProxy.java:23)
+	at net.fabricmc.loader.launch.knot.KnotClassDelegate.loadClassData(KnotClassDelegate.java:174)
+	at net.fabricmc.loader.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:143)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at supercoder79.simplexterrain.world.gen.SimplexChunkGenerator.method_12107(SimplexChunkGenerator.java:116)
+	at net.minecraft.class_2806.method_16566(class_2806.java:102)
+	at net.minecraft.class_2806$$Lambda$1344/1680079783.doWork(Unknown Source)
+	at net.minecraft.class_2806$class_3768.doWork(class_2806.java:258)
+	at net.minecraft.class_2806.method_12154(class_2806.java:214)
+	at net.minecraft.class_3898.method_17225(class_3898.java:549)
+	at net.minecraft.class_3898$$Lambda$3833/140503747.apply(Unknown Source)
+	at com.mojang.datafixers.util.Either$Left.map(Either.java:38)
+	at net.minecraft.class_3898.method_17224(class_3898.java:543)
+	at net.minecraft.class_3898$$Lambda$3818/728303428.apply(Unknown Source)
+	at java.util.concurrent.CompletableFuture.uniCompose(CompletableFuture.java:952)
+	at java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:926)
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:442)
+	at net.minecraft.class_3900.method_17634(class_3900.java:58)
+	at net.minecraft.class_3900$$Lambda$3831/1837247072.run(Unknown Source)
+	at net.minecraft.class_3846.method_16907(class_3846.java:83)
+	at net.minecraft.class_3846.method_16900(class_3846.java:123)
+	at net.minecraft.class_3846.run(class_3846.java:91)
+
+-- Affected level --
+Details:
+	All players: 0 total; []
+	Chunk stats: ServerChunkCache: 529
+	Level dimension: minecraft:overworld
+	Level name: Survival (1)
+	Level seed: -8134061938813269026
+	Level generator: ID 09 - simplex, ver 0. Features enabled: true
+	Level generator options: {}
+	Level spawn location: World: (8,64,8), Chunk: (at 8,4,8 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 0 game time, 0 day time
+	Known server brands: fabric
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.method_3786(MinecraftServer.java:422)
+	at net.minecraft.class_1132.method_3735(class_1132.java:84)
+	at net.minecraft.class_1132.method_3823(class_1132.java:106)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:634)
+	at java.lang.Thread.run(Thread.java:745)
+
+-- System Details --
+Details:
+	Minecraft Version: 20w08a
+	Minecraft Version ID: 20w08a
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 1654417064 bytes (1577 MB) / 3019898880 bytes (2880 MB) up to 6442450944 bytes (6144 MB)
+	CPUs: 12
+	JVM Flags: 9 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xss1M -Xmx6G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	Fabric Mods: 
+		aswitch: AutoSwitch 0.11.3
+		autoconfig1u: Auto Config v1 Updated 1.2.4
+		beem: Beem 1.2
+		boringbackgrounds: Boring Backgrounds 1.0.0
+		carpet: Carpet Mod in Fabric 1.3.10
+		cloth: Cloth Events 1.2.0
+		cloth-config2: Cloth Config v2 2.9.3
+		cotton: Cotton 1.0.2
+		cotton-cauldron: Cotton Cauldron 1.0.0-rc.6
+		cotton-client-commands: Cotton Client Commands 0.4.2+1.14.3-SNAPSHOT
+		cotton-commons: Cotton Commons 1.0.0-rc.4
+		cotton-config: Cotton Config 1.0.0-rc.7
+		cotton-datapack: Cotton Datapack 1.0.1
+		cotton-logging: Cotton Logging 1.0.0-rc.4
+		cotton-player-events: Cotton Player Events 1.0.2
+		cullparticles: Cull Particles 1.0
+		dynamicfps: Dynamic FPS 1.1.0
+		elytra_swap: Elytra Swap 1.3.0-20w06a
+		fabric: Fabric API 0.4.30+build.294-1.16
+		fabric-api-base: Fabric API Base 0.1.2+28f8190f42
+		fabric-biomes-v1: Fabric Biomes (v1) 0.1.5+3b05f68ebf
+		fabric-blockrenderlayer-v1: Fabric BlockRenderLayer Registration (v1) 1.1.4+c6a8ea89bf
+		fabric-commands-v0: Fabric Commands (v0) 0.1.2+b7f9825dbf
+		fabric-containers-v0: Fabric Containers (v0) 0.1.4+9421522dbf
+		fabric-content-registries-v0: Fabric Content Registries (v0) 0.1.3+b7f9825dbf
+		fabric-crash-report-info-v1: Fabric Crash Report Info (v1) 0.1.2+b7f9825dbf
+		fabric-dimensions-v1: fabric-dimensions-v1 0.2.5+9421522dbf
+		fabric-events-interaction-v0: Fabric Events Interaction (v0) 0.2.8+9421522dbf
+		fabric-events-lifecycle-v0: Fabric Events Lifecycle (v0) 0.1.2+b7f9825dbf
+		fabric-item-groups-v0: Fabric Item Groups (v0) 0.1.6+ec40b2e1bf
+		fabric-keybindings-v0: Fabric Key Bindings (v0) 0.1.1+dfdb52d6bf
+		fabric-language-kotlin: Fabric Language Kotlin 1.3.61+build.1
+		fabric-loot-tables-v1: Fabric Loot Tables (v1) 0.1.5+e08a7305bf
+		fabric-mining-levels-v0: Fabric Mining Levels (v0) 0.1.1+b7f9825dbf
+		fabric-models-v0: Fabric Models (v0) 0.1.0+dfdb52d6bf
+		fabric-networking-blockentity-v0: Fabric Networking Block Entity (v0) 0.2.4+9421522dbf
+		fabric-networking-v0: Fabric Networking (v0) 0.1.8+9421522dbf
+		fabric-object-builders-v0: Fabric Object Builders (v0) 0.1.3+e4c9a9c3bf
+		fabric-particles-v1: fabric-particles-v1 0.1.1+dfdb52d6bf
+		fabric-registry-sync-v0: Fabric Registry Sync (v0) 0.2.7+9421522dbf
+		fabric-renderer-api-v1: Fabric Renderer API (v1) 0.2.9+aea78a25bf
+		fabric-renderer-indigo: Fabric Renderer - Indigo 0.2.23+820cd5cfbf
+		fabric-renderer-registries-v1: Fabric Renderer Registries (v1) 2.0.1+5a0f9a60bf
+		fabric-rendering-data-attachment-v1: Fabric Rendering Data Attachment (v1) 0.1.3+b7f9825dbf
+		fabric-rendering-fluids-v1: Fabric Rendering Fluids (v1) 0.1.6+12515ed9bf
+		fabric-rendering-v0: Fabric Rendering (v0) 1.1.0+53410490bf
+		fabric-rendering-v1: Fabric Rendering (v1) 0.1.0+53410490bf
+		fabric-resource-loader-v0: Fabric Resource Loader (v0) 0.1.10+06c939b3bf
+		fabric-tag-extensions-v0: Fabric Tag Extensions (v0) 0.1.3+abd91580bf
+		fabric-textures-v0: Fabric Textures (v0) 1.0.4+821cdba7bf
+		fabricloader: Fabric Loader 0.7.8+build.184
+		fairenchanting: FairEnchanting 1.1.2
+		farlands: FarLands 1.6.7+build.19
+		frex: FREX 1.3.104
+		godown: Go Down 0.2.0
+		illuminations: Illuminations 0.6
+		jankson: Jankson 2.0.1+j1.2.0
+		json-model-extensions: JSON Model Extensions 1.4.81
+		libcd: LibCapableData 2.2.2+1.15.2
+		lightoverlay: Light Overlay 4.2
+		malilib: MaLiLib 0.10.0-dev.20+beta.2
+		me_shedaniel_cloth_basic-math: basic-math 0.3.0
+		me_zeroeightsix_fiber: fiber 0.8.0-1
+		minecraft: Minecraft 1.16-alpha.20.8.a
+		modmenu: Mod Menu 1.10.0+build.28
+		netherhigher: netherHigher 1.1.0+build.4
+		okzoomer: Ok Zoomer 2.1.2
+		orderly: Orderly 2.0.0-alpha+build.7-1.15
+		org_aeonbits_owner_owner: owner 1.0.10
+		org_jetbrains_annotations: annotations 18.0.0
+		org_jetbrains_kotlin_kotlin-reflect: kotlin-reflect 1.3.61
+		org_jetbrains_kotlin_kotlin-stdlib: kotlin-stdlib 1.3.61
+		org_jetbrains_kotlin_kotlin-stdlib-jdk7: kotlin-stdlib-jdk7 1.3.61
+		org_jetbrains_kotlin_kotlin-stdlib-jdk8: kotlin-stdlib-jdk8 1.3.61
+		org_jetbrains_kotlinx_kotlinx-coroutines-core: kotlinx-coroutines-core 1.3.3
+		org_jetbrains_kotlinx_kotlinx-coroutines-jdk8: kotlinx-coroutines-jdk8 1.3.3
+		pathsuggestion: Path Suggestion 0.3.0
+		phosphor: Phosphor 0.4.0
+		playerlightfix: Player Light Fix 1.0.1
+		random_teleport: Random Teleport 1.16+20w06a-1.0.0
+		roughlyenoughitems: Roughly Enough Items 4.0.0-unstable.202002091715
+		runorama: runorama 0.2.4
+		shuffle: Shuffle 1.14.4-1.15.2-20w06a-1.1.0
+		simplexterrain: Simplex Terrain 0.5.1
+		sneakthroughberries: Sneak Through Berries 1.15.2-20w06a-1.0.1
+		strongandfairanvils: Strong and Fair Anvils 0.3.0
+		survivaldebugstick: Survival Debug Stick 1.15.2-20w06a-1.0.0
+		trees-do-not-float: Trees Do Not Float 1.8.76
+		tweakeroo: Tweakeroo 0.10.0-dev.20200205.233342
+		walljump: Wall-Jump! 1.3.3+20w07a
+		worldedit: WorldEdit 7.1.0;8e55131
+	Player Count: 0 / 8; []
+	Data Packs: vanilla, fabric/cotton-commons (incompatible), fabric/fabric-mining-levels-v0 (incompatible), fabric/illuminations (incompatible), fabric/libcd (incompatible), fabric/strongandfairanvils (incompatible), global/cotton_generated (incompatible)
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fabric'
